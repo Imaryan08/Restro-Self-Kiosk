@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+    font-family: monospace;
+}
+
+.container{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.container > .mainMenu{
+    width: 20%;
+    border: 1px solid lightgray;
+    margin: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.container > .mainMenu > h1{
+    background-color: red;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    font-size: 30px;
+}
+.container > .mainMenu > div{
+    text-align: center;
+    margin: 25px;
+    padding: 15px 0px;
+}
+.container > .mainMenu > div:hover{
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.container > .right{
+    width: 75%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid lightgray;
+    margin: 10px;
+    border-radius: 5px;
+    overflow: scroll;
+}
+
+.right > .placeOrder{
+    position: sticky;
+    top: 0;
+    padding: 20px 20px;
+    background-color: red;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+}
+.orderId{
+    display: none;
+    background-color: black;
+    color: #fff;
+    padding: 10px;
+    text-align: right;
+}
+.placeOrder  button{
+    text-transform: uppercase;
+    padding: 6px 10px;
+    background-color: #222;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.placeOrder  button:hover{
+    cursor: pointer;
+    background-color: green;
+}
+.right > .placeOrder > h2{
+    /* position: fixed; */
+}
+
+.container > .subMenu{
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.subMenu > div {
+    display: flex;
+    border: 1px solid lightgray;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.subMenu > div > div:nth-child(2){
+    padding-top: 30px;
+    margin: 0 20px;
+}
+.subMenu > div > div:nth-child(2) > h4{
+    margin: 10px 0;
+    font-size: 15px;
+}
+.subMenu > div > div:nth-child(2) > h5{
+    margin: 10px 0;
+    font-size: 16px;
+}
+.subMenu > div > div:nth-child(2) > h2{
+    margin: 10px 0;
+    font-size: 20px;
+}
+.subMenu > div > div:nth-child(2) > button{
+    cursor: pointer;
+    padding: 7px 10px;
+    background-color: green;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+}
+.subMenu > div > div:nth-child(2) > button:hover{
+    background-color: rgb(3, 100, 3);
+}
+.subMenu > div > div:nth-child(1) {
+    padding: 10px;
+    margin: 0 30px;
+}
+.subMenu > div > div > img{
+    height: 150px;
+}
