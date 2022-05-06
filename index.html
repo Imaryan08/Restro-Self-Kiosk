@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self Order </title>
+    <link rel="shortcut icon" href="https://github.com/SEGH/burger/blob/master/public/favicon.ico?raw=true" type="image/x-icon">
+    <link rel="stylesheet" href="mcdi.css">
+</head>
+<body>
+    <div class="container">
+      <div class="mainMenu">
+        <h1>Main Menu</h1>
+        
+        <div class="dessert" onclick="dessert()">
+            <img src="https://www.mcdonaldsindia.com/images/products/BeveragesandDesserts/WalnutBrownieandHotFudge.jpg" alt="desserts" class="desserts">
+        </div>
+        <div class="burger" onclick="burger()">
+            <img src="https://www.mcdonaldsindia.com/images/products/Favorites/McMaharaja-nonveg.png" alt="burgers" class="burgers">
+        </div>
+        <div class="beverage" onclick="beverage()" >
+            <img src="https://www.mcdonaldsindia.com/images/products/BeveragesandDesserts/IcedTea.jpg" alt="beverage" class="beverage">
+        </div>
+        <div class="fav" onclick="favMeal()">
+            <img src="https://www.mcdonaldsindia.com/images/products/Favorites/FrenchFries.jpg" alt="favs" class="favs">
+        </div>
+      </div>
+      
+      <div class="right">
+        <div class="placeOrder">
+            <h2>My Order - Total: <span class="total"> 0</span> | Item: <span class="item">0 </span></h2> 
+            <span><button class="orderFood">order food</button></span>
+        </div>
+        <div class="subMenu">
+            <p class="orderId">Order ID: <span id="invoice"></span></p>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
+<script src="mcdi.js"></script>
