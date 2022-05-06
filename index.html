@@ -1,42 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Self Order </title>
-    <link rel="shortcut icon" href="https://github.com/SEGH/burger/blob/master/public/favicon.ico?raw=true" type="image/x-icon">
-    <link rel="stylesheet" href="mcdi.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Self Order</title>
+    <link
+      rel="shortcut icon"
+      href="https://github.com/SEGH/burger/blob/master/public/favicon.ico?raw=true"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="mcdi.css" />
+  </head>
+  <body>
     <div class="container">
       <div class="mainMenu">
         <h1>Main Menu</h1>
-        
+
         <div class="dessert" onclick="dessert()">
-            <img src="https://www.mcdonaldsindia.com/images/products/BeveragesandDesserts/WalnutBrownieandHotFudge.jpg" alt="desserts" class="desserts">
+          <img
+            src="https://www.mcdonaldsindia.com/images/products/BeveragesandDesserts/WalnutBrownieandHotFudge.jpg"
+            alt="desserts"
+            class="desserts"
+          />
         </div>
         <div class="burger" onclick="burger()">
-            <img src="https://www.mcdonaldsindia.com/images/products/Favorites/McMaharaja-nonveg.png" alt="burgers" class="burgers">
+          <img
+            src="https://www.mcdonaldsindia.com/images/products/Favorites/McMaharaja-nonveg.png"
+            alt="burgers"
+            class="burgers"
+          />
         </div>
-        <div class="beverage" onclick="beverage()" >
-            <img src="https://www.mcdonaldsindia.com/images/products/BeveragesandDesserts/IcedTea.jpg" alt="beverage" class="beverage">
+        <div class="beverage" onclick="beverage()">
+          <img
+            src="https://www.mcdonaldsindia.com/images/products/BeveragesandDesserts/IcedTea.jpg"
+            alt="beverage"
+            class="beverage"
+          />
         </div>
         <div class="fav" onclick="favMeal()">
-            <img src="https://www.mcdonaldsindia.com/images/products/Favorites/FrenchFries.jpg" alt="favs" class="favs">
+          <img
+            src="https://www.mcdonaldsindia.com/images/products/Favorites/FrenchFries.jpg"
+            alt="favs"
+            class="favs"
+          />
         </div>
       </div>
-      
+
       <div class="right">
         <div class="placeOrder">
-            <h2>My Order - Total: <span class="total"> 0</span> | Item: <span class="item">0 </span></h2> 
-            <span><button class="orderFood">order food</button></span>
+          <h2>
+            My Order - Total: <span class="total"> 0</span> | Item:
+            <span class="item">0 </span>
+          </h2>
+          <span><button class="orderFood">order food</button></span>
         </div>
         <div class="subMenu">
-            <p class="orderId">Order ID: <span id="invoice"></span></p>
+          <p class="orderId">Order ID: <span id="invoice"></span></p>
         </div>
+      </div>
     </div>
-    </div>
-</body>
+<script src="./mcdi.js"></script>
+
+  </body>
 </html>
-<script src="mcdi.js"></script>
+<script>
+     let burger = [
+    {
+        img_url: 'https://images.mcdelivery.co.in/hardcastle-restaurants-pvt-ltd/image/upload/f_auto,q_auto,w_250/v1626342718/Item/5276.png',
+        name: 'Triple Cheese American Veg Burger',
+        cal: '120 Cal',
+        price: '₹ 201',
+    },
+    {
+        img_url: 'https://images.mcdelivery.co.in/hardcastle-restaurants-pvt-ltd/image/upload/f_auto,q_auto,w_250/v1626242155/Item/5294.png',
+        name: 'McSpicy Premium Veg Burger',
+        cal: '180 Cal',
+        price: '₹ 221',
+    },
+    {
+        img_url: 'https://images.mcdelivery.co.in/hardcastle-restaurants-pvt-ltd/image/upload/f_auto,q_auto,w_250/v1626682653/Item/5412.png',
+        name: 'Piri Piri Spiced Veg Burger',
+        cal: '80 Cal',
+        price: '₹ 226',
+    },
+    {
+        img_url: 'https://images.mcdelivery.co.in/hardcastle-restaurants-pvt-ltd/image/upload/f_auto,q_auto,w_250/v1626342713/Item/5275.png',
+        name: 'Triple Cheese American Chicken Burger',
+        cal: '140 Cal',
+        price: '₹ 231',
+    },
+    {
+        img_url: 'https://images.mcdelivery.co.in/hardcastle-restaurants-pvt-ltd/image/upload/f_auto,q_auto,w_250/v1626242155/Item/5275.png',
+        name: 'McChicken Burger ',
+        cal: '110 Cal',
+        price: '₹ 126',
+    },
+    {
+        img_url: 'https://images.mcdelivery.co.in/hardcastle-restaurants-pvt-ltd/image/upload/f_auto,q_auto,w_250/v1626242155/Item/5294.png',
+        name: 'McSpicy Chicken Burger ',
+        cal: '200 Cal',
+        price: '₹ 173',
+    },
+];
+
+localStorage.setItem('burger',JSON.stringify(burger));
+
+let beverages = [
+    {
+        img_url: 'https://images.mcdelivery.co.in/hardcastle-restaurants-pvt-ltd/image/upload/f_auto,q_auto,w_250/v1589466119/Item/16.png',
+        name: 'Coke',
+        cal: '80 Cal',
+        price: '₹ 100',
+    },
+    {
+        img_url: 'https://images.mcdelivery.co.in/hardcastle-restaurants-pvt-ltd/image/upload/f_auto,q_auto,w_250/v1593066950/Item/3670.png',
+        name: 'MIXED BERRY SMOTTHIE',
+        cal: '148 Cal',
+        price: '₹ 184',
+    },
+    {
+        img_url: 'https://images.mcdelivery.co.in/hardcastle-restaurants-pvt-ltd/image/upload/f_auto,q_auto,w_250/v1636382893/Item/6090.png',
+        name: 'Mocha Oreo Shake',
+        cal: '115 Cal',
+        price: '₹ 247',
+    },
+    {
+        img_url: 'https://images.mcdelivery.co.in/hardcastle-restaurants-pvt-ltd/image/upload/f_auto,q_auto,w_250/v1636382883/Item/6091.png',
+        name: 'Strawberry Oreo Shake',
+        cal: '120 Cal',
+        price: '₹ 267',
+    },
+    {
+        img_url: 'https://images.mcdelivery.co.in/hardcastle-restaurants-pvt-ltd/image/upload/f_auto,q_auto,w_250/v1589467260/Item/30.png',
+        name: 'Sprite',
+        cal: '120 Cal',
+        price: '₹ 100',
+        
+    },
+];
+
+localStorage.setItem('beverages',JSON.stringify(beverages));
+
+
+let desserts = [
+    {
+        img_url: 'https://images.mcdelivery.co.in/hardcastle-restaurants-pvt-ltd/image/upload/f_auto,q_auto,w_250/v1589466970/Item/3673.png',
+        name: 'Chocolate Chip Muffin',
+        cal: '127 Cal',
+        price: '₹ 121',
+    },
+    {
+        img_url: 'https://images.mcdelivery.co.in/hardcastle-restaurants-pvt-ltd/image/upload/f_auto,q_auto,w_250/v1621519296/Item/5911.png',
+        name: 'Black Forest Mcflurry BOGO',
+        cal: '84 Cal',
+        price: '₹ 117',
+    },
+    {
+        img_url: 'https://images.mcdelivery.co.in/hardcastle-restaurants-pvt-ltd/image/upload/f_auto,q_auto,w_250/v1589466116/Item/3.png',
+        name: 'McFlurry Oreo Medium',
+        cal: '132 Cal',
+        price: '₹ 112',
+    },
+    {
+        img_url: 'https://images.mcdelivery.co.in/hardcastle-restaurants-pvt-ltd/image/upload/f_auto,q_auto,w_250/v1589466113/Item/5.png',
+        name: 'Soft Serve Hot Fudge',
+        cal: '110 Cal',
+        price: '₹ 89',
+    },
+    {
+        img_url: 'https://images.mcdelivery.co.in/hardcastle-restaurants-pvt-ltd/image/upload/f_auto,q_auto,w_250/v1642087175/Item/4.png',
+        name: 'Mcflurry Oreo Small',
+        cal: '60 Cal',
+        price: '₹ 84',
+    },
+];
+
+localStorage.setItem('desserts',JSON.stringify(desserts));
+
+
+let favMeal = [
+    {
+        img_url: 'https://images.mcdelivery.co.in/hardcastle-restaurants-pvt-ltd/image/upload/f_auto,q_auto,w_250/v1626342720/Item/5279.png',
+        name: 'Triple Cheese American Chicken Meal',
+        cal: '140 Cal',
+        price: '₹ 320',
+    },
+    {
+        img_url: 'https://images.mcdelivery.co.in/hardcastle-restaurants-pvt-ltd/image/upload/f_auto,q_auto,w_250/v1626342720/Item/5280.png',
+        name: 'Triple Cheese American Veg Meal',
+        cal: '124 Cal',
+        price: '₹ 320',
+    },
+    {
+        img_url: 'https://images.mcdelivery.co.in/hardcastle-restaurants-pvt-ltd/image/upload/f_auto,q_auto,w_250/v1637909065/Item/5283.png',
+        name: 'McSpicy Premium Chicken Meal',
+        cal: '180 Cal',
+        price: '₹ 320',
+    },
+    {
+        img_url: 'https://images.mcdelivery.co.in/hardcastle-restaurants-pvt-ltd/image/upload/f_auto,q_auto,w_250/v1637909065/Item/5295.png',
+        name: 'McSpicy Premium Veg Meal',
+        cal: '157 Cal',
+        price: '₹ 220',
+    },
+    {
+        img_url: 'https://images.mcdelivery.co.in/hardcastle-restaurants-pvt-ltd/image/upload/f_auto,q_auto,w_250/v1626682653/Item/5398.png',
+        name: 'Piri Piri Spiced Veg Burger Meal',
+        cal: '160 Cal',
+        price: '₹ 220',
+    },
+];
+
+localStorage.setItem('favMeal',JSON.stringify(favMeal));
+</script>
+
